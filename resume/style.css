@@ -1,0 +1,70 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #3035ca;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.about, .skills, .experience, .education, .contact {
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills li {
+    background: #dddae0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.job, .school {
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #cfd5dc;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
