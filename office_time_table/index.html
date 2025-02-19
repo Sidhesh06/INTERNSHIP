@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .schedule-container {
+            width: 80%;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 5px solid gray;
+            box-shadow: 5px 5px 10px black;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .office { background-color: #f4c6a5; }
+        .mat108 { background-color: #00ff00; }
+        .csc205 { background-color: #ff99ff; }
+        .dept-meeting, .ec-meeting { background-color: #bfbfbf; }
+        .office-hours { background-color: #f4c6a5; }
+    </style>
+</head>
+<body>
+    <div class="schedule-container">
+        <table>
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+            <tr>
+                <td>1:00</td>
+                <td rowspan="2" class="office">Office</td>
+                <td rowspan="2"></td>
+                <td rowspan="2" class="office">Office</td>
+                <td rowspan="4" class="office-hours">Office Hours by Appt</td>
+                <td rowspan="2" class="office">Office</td>
+            </tr>
+            <tr>
+                <td>1:30</td>
+            </tr>
+            <tr>
+                <td>2:00</td>
+                <td rowspan="2" class="mat108">MAT 108</td>
+                <td rowspan="2" class="dept-meeting">Dept Meeting</td>
+                <td rowspan="2" class="mat108">MAT 108</td>
+                <td rowspan="2" class="mat108">MAT 108</td>
+            </tr>
+            <tr>
+                <td>2:30</td>
+            </tr>
+            <tr>
+                <td>3:00</td>
+                <td rowspan="2" class="csc205">CSC 205</td>
+                <td rowspan="2" class="ec-meeting">EC Meeting</td>
+                <td rowspan="2" class="csc205">CSC 205</td>
+                <td rowspan="2" class="csc205">CSC 205</td>
+            </tr>
+            <tr>
+                <td>3:30</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

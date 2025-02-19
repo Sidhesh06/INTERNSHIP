@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provinces of British India (1907)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+        .map-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .map-container img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("provinceTable");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Provinces of British India (1907)</h2>
+    <table id="provinceTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Province</th>
+                <th onclick="sortTable(1)">Area (km²)</th>
+                <th onclick="sortTable(2)">Population in million (1901)</th>
+                <th onclick="sortTable(3)">Chief Administrator</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Assam Province</td><td>130000</td><td>6</td><td>Chief Commissioner</td></tr>
+            <tr><td>Bengal Presidency</td><td>390000</td><td>75</td><td>Lieutenant-Governor</td></tr>
+            <tr><td>Bombay Presidency</td><td>320000</td><td>19</td><td>Governor-in-Council</td></tr>
+            <tr><td>Central Provinces and Berar</td><td>270000</td><td>13</td><td>Chief Commissioner</td></tr>
+            <tr><td>Madras Presidency</td><td>370000</td><td>38</td><td>Governor-in-Council</td></tr>
+            <tr><td>Punjab</td><td>250000</td><td>20</td><td>Lieutenant-Governor</td></tr>
+            <tr><td>United Provinces</td><td>280000</td><td>48</td><td>Lieutenant-Governor</td></tr>
+            <tr><td>Ajmer-Merwara</td><td>7000</td><td>477</td><td><i>ex officio</i> Chief Commissioner</td></tr>
+            <tr><td>Andaman and Nicobar Islands</td><td>78000</td><td>25</td><td>Chief Commissioner</td></tr>
+            <tr><td>Coorg Province</td><td>4100</td><td>181</td><td><i>ex officio</i> Chief Commissioner</td></tr>
+        </tbody>
+    </table>
+    
+    <div class="map-container">
+        <h3>Map</h3>
+        <img src="image.png" alt="Map of British India (1907)">
+    </div>
+</body>
+</html>
