@@ -1,0 +1,18 @@
+import zipfile
+import os
+
+# Define the path to the uploaded ZIP file
+zip_path = "/mnt/data/CSS Float Task.zip"
+extract_path = "/mnt/data/CSS_Float_Task_Extracted"
+
+# Extract the ZIP file
+with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_path)
+
+# List the extracted files
+extracted_files = []
+for root, dirs, files in os.walk(extract_path):
+    for file in files:
+        extracted_files.append(os.path.join(root, file))
+
+extracted_files
